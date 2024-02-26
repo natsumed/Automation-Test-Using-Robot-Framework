@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-02-26T11:56:28.988883" rpa="false" schemaversion="5">
+<suite id="s1" name="Changehostname Webinterface" source="c:\Users\MSI\Desktop\Studies\PFE\Automation-Test-Using-Robot-Framework\vs_codes\tests_robot_framework\changehostname_webinterface.robot">
+<test id="s1-t1" name="Open Example Website" line="11">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-02-26T11:56:29.160574" level="INFO">Opening browser 'Chrome' to base url 'http://192.168.13.1/cgi-bin/luci/admin/system/system'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-02-26T11:56:29.160574" elapsed="2.958678"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-02-26T11:56:32.119881" elapsed="0.114523"/>
+</kw>
+<kw name="Input Username">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=luci_username</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-02-26T11:56:32.234404" elapsed="0.033730"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-26T11:56:32.269152" level="INFO">Typing text 'root' into text field 'id=luci_username'.</msg>
+<arg>id=luci_username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-26T11:56:32.268134" elapsed="0.075106"/>
+</kw>
+<arg>${USERNAME}</arg>
+<status status="PASS" start="2024-02-26T11:56:32.234404" elapsed="0.108836"/>
+</kw>
+<kw name="Click Login Button">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>class=cbi-button-positive</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-02-26T11:56:32.343240" elapsed="0.016454"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-02-26T11:56:32.359694" level="INFO">Clicking button 'class=cbi-button-positive'.</msg>
+<arg>class=cbi-button-positive</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-26T11:56:32.359694" elapsed="0.609032"/>
+</kw>
+<status status="PASS" start="2024-02-26T11:56:32.343240" elapsed="0.625486"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>class=cbi-input-text</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-02-26T11:56:32.968726" elapsed="1.094691"/>
+</kw>
+<kw name="Input Hostname">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>class=cbi-input-text</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-02-26T11:56:34.063417" elapsed="0.013275"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-26T11:56:34.076692" level="INFO">Typing text 'TheAdmin' into text field 'class=cbi-input-text'.</msg>
+<arg>class=cbi-input-text</arg>
+<arg>${hostname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-26T11:56:34.076692" elapsed="0.051176"/>
+</kw>
+<arg>${Hostname}</arg>
+<status status="PASS" start="2024-02-26T11:56:34.063417" elapsed="0.064451"/>
+</kw>
+<kw name="Click SAVE&amp;APPLY Button">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-26T11:56:34.127868" level="INFO">Clicking element 'xpath=//li[contains(text(), 'Save &amp; Apply')]'.</msg>
+<arg>xpath=//li[contains(text(), 'Save &amp; Apply')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-26T11:56:34.127868" elapsed="0.030264"/>
+</kw>
+<status status="PASS" start="2024-02-26T11:56:34.127868" elapsed="0.030264"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-02-26T11:56:54.161634" level="INFO">Slept 20 seconds.</msg>
+<arg>20s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-02-26T11:56:34.158132" elapsed="20.003502"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-02-26T11:56:54.169650" elapsed="2.196703"/>
+</kw>
+<status status="PASS" start="2024-02-26T11:56:29.160574" elapsed="27.215810"/>
+</test>
+<status status="PASS" start="2024-02-26T11:56:28.990884" elapsed="27.435925"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Changehostname Webinterface">Changehostname Webinterface</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

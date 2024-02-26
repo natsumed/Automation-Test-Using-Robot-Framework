@@ -5,7 +5,7 @@ Library           SeleniumLibrary
 ${URL}            http://192.168.13.1/cgi-bin/luci/admin/system/system
 ${BROWSER}        Chrome
 ${USERNAME}       root
-${Hostname}       AdminnnnMohamed
+${Hostname}       TheAdmin
 
 *** Test Cases ***
 Open Example Website
