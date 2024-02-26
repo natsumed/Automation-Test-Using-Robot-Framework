@@ -1,0 +1,9 @@
+Hostname admin
+Model Wallystech DR40X9
+Architecture ARMv7 Processor rev 5 (v7l)
+Target Platform ipq40xx/generic
+Firmware Version OpenWrt SNAPSHOT r24954-5a3f6c50ef / LuCI Master git-24.029.04719-7a9ae68
+Kernel Version 6.1.74
+Local Time 2024-02-13 15:26:47
+Uptime 0h 1m 15s
+Load Average 0.83, 0.31, 0.11
