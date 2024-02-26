@@ -7,7 +7,7 @@ Library    OperatingSystem
 ${URL}            http://192.168.13.1/cgi-bin/luci/admin/
 ${BROWSER}        Chrome
 ${USERNAME}       root
-${SYSTEM_INFO_FILE}    /home/lenovo/Desktop/PFE/VS_codes/tests_Robot_Framework/system_info.txt
+${SYSTEM_INFO_FILE}  C:\\Users\\MSI\\Desktop\\Studies\\PFE\\Automation-Test-Using-Robot-Framework-master\\VS_codes\\tests_Robot_Framework\\system_info.txt
 
 *** Test Cases ***
 Login to Luceor and Get System Info

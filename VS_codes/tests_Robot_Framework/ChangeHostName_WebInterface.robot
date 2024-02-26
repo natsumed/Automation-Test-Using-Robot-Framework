@@ -16,7 +16,7 @@ Open Example Website
     Wait Until Page Contains Element    class=cbi-input-text 
     Input Hostname    ${Hostname}
     Click SAVE&APPLY Button
-    Sleep    30s
+    Sleep    20s
     Close Browser
 
 *** Keywords ***

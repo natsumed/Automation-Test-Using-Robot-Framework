@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-02-22T15:57:00.094078" rpa="false" schemaversion="5">
+<suite id="s1" name="Check Olsr Configuration" source="c:\Users\MSI\Desktop\Studies\PFE\Automation-Test-Using-Robot-Framework-master\VS_codes\tests_Robot_Framework\check_olsr_configuration.robot">
+<test id="s1-t1" name="SSH Connection Test" line="10">
+<kw name="Open Connection" owner="SSHLibrary">
+<arg>${HOST}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="PASS" start="2024-02-22T15:57:00.287778" elapsed="0.000000"/>
+</kw>
+<kw name="Login" owner="SSHLibrary">
+<msg time="2024-02-22T15:57:00.287778" level="INFO">Logging into '192.168.13.1:22' as 'root'.</msg>
+<msg time="2024-02-22T15:57:01.749123" level="INFO">Read output: 
+
+BusyBox v1.36.1 (2024-02-01 15:22:11 UTC) built-in shell (ash)
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ OpenWrt SNAPSHOT, r24954-5a3f6c50ef
+ -----------------------------------------------------
+=== WARNING! =====================================
+There is no root password defined on this device!
+Use the "passwd" command to set up a new password
+in order to prevent unauthorized SSH logins.
+--------------------------------------------------
+root@OpenWrt:~#</msg>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<status status="PASS" start="2024-02-22T15:57:00.287778" elapsed="1.461916"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2024-02-22T15:57:01.749694" level="INFO">Executing command 'touch hellomynameismohamed'.</msg>
+<msg time="2024-02-22T15:57:01.778371" level="INFO">Command exited with return code 0.</msg>
+<msg time="2024-02-22T15:57:01.778371" level="INFO">${result} = </msg>
+<var>${result}</var>
+<arg>touch hellomynameismohamed</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2024-02-22T15:57:01.749694" elapsed="0.028677"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-22T15:57:01.778371" level="INFO"/>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-22T15:57:01.778371" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2024-02-22T15:57:01.782547" level="INFO">Executing command 'ps | grep olsr'.</msg>
+<msg time="2024-02-22T15:57:01.857762" level="INFO">Command exited with return code 0.</msg>
+<msg time="2024-02-22T15:57:01.857762" level="INFO">${result} =  4846 root      1096 S    ash -c ps | grep olsr
+ 4848 root      1096 S    grep olsr</msg>
+<var>${result}</var>
+<arg>ps | grep olsr</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2024-02-22T15:57:01.778371" elapsed="0.079391"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-22T15:57:01.859654" level="INFO"> 4846 root      1096 S    ash -c ps | grep olsr
+ 4848 root      1096 S    grep olsr</msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-22T15:57:01.859654" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2024-02-22T15:57:01.859654" level="INFO">Executing command 'touch hellomynameismohamed2222'.</msg>
+<msg time="2024-02-22T15:57:01.917918" level="INFO">Command exited with return code 0.</msg>
+<msg time="2024-02-22T15:57:01.917918" level="INFO">${result} = </msg>
+<var>${result}</var>
+<arg>touch hellomynameismohamed2222</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2024-02-22T15:57:01.859654" elapsed="0.058264"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-22T15:57:01.917918" level="INFO"/>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-22T15:57:01.917918" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2024-02-22T15:57:01.921304" level="INFO">Executing command 'cat /etc/olsrd.conf'.</msg>
+<msg time="2024-02-22T15:57:01.978626" level="INFO">Command exited with return code 1.</msg>
+<msg time="2024-02-22T15:57:01.978626" level="INFO">${result} = </msg>
+<var>${result}</var>
+<arg>cat /etc/olsrd.conf</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2024-02-22T15:57:01.917918" elapsed="0.060708"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-22T15:57:01.978626" level="INFO"/>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-22T15:57:01.978626" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2024-02-22T15:57:01.978626" level="INFO">Executing command 'ls'.</msg>
+<msg time="2024-02-22T15:57:02.029638" level="INFO">Command exited with return code 0.</msg>
+<msg time="2024-02-22T15:57:02.030683" level="INFO">${result} = hellomynameismohamed
+hellomynameismohamed2222</msg>
+<var>${result}</var>
+<arg>ls</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2024-02-22T15:57:01.978626" elapsed="0.052799"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-22T15:57:02.031425" level="INFO">hellomynameismohamed
+hellomynameismohamed2222</msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-22T15:57:02.031425" elapsed="0.000899"/>
+</kw>
+<kw name="Close Connection" owner="SSHLibrary">
+<doc>Closes the current connection.</doc>
+<status status="PASS" start="2024-02-22T15:57:02.032324" elapsed="0.001007"/>
+</kw>
+<status status="PASS" start="2024-02-22T15:57:00.287778" elapsed="1.747026"/>
+</test>
+<status status="PASS" start="2024-02-22T15:57:00.097056" elapsed="1.942486"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Check Olsr Configuration">Check Olsr Configuration</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -10,9 +10,13 @@ ${PASSWORD}
 SSH Connection Test
     Open Connection    ${HOST}
     Login    ${USERNAME}  ${PASSWORD} 
-    ${result}    Execute Command    ls
+    ${result}    Execute Command    ps | grep olsr
     Log    ${result}
-    ${result}    Execute Command    touch moh
+    #TEST to ensure that the OLSR process is running:
+    #
+    #
+    #
+    ${result}    Execute Command    cat /etc/olsrd.conf
     Log    ${result}
     ${result}    Execute Command    ls
     Log    ${result}

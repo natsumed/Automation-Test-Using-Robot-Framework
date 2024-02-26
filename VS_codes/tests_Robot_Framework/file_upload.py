@@ -32,6 +32,7 @@ pyautogui.click()
 # Check the active window
 #active_window = pyautogui.getActiveWindow()
 #time.sleep(2)
+
 #print("Active Window:", active_window)
 
 # Write the active window information to a text file
@@ -40,18 +41,10 @@ pyautogui.click()
 
 time.sleep(2)
 # Type 'openwrt-'
-#pyautogui.typewrite('open', interval=0.1)
+pyautogui.typewrite('openwrt-ipq40xx-generic-wallys_dr40x9-squashfs-sysupgrade', interval=0.1)
 
-pyautogui.press('o')
-pyautogui.press('p')
-pyautogui.press('e')
-pyautogui.press('n')
-pyautogui.press('i')
-pyautogui.press('m')
-pyautogui.press('g')
-pyautogui.press('w')
-pyautogui.press('r')
-pyautogui.press('t')
+#pyautogui.press('o')
+
 time.sleep(1)
 
 
