@@ -1,102 +1,713 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-02-26T11:56:28.988883" rpa="false" schemaversion="5">
-<suite id="s1" name="Changehostname Webinterface" source="c:\Users\MSI\Desktop\Studies\PFE\Automation-Test-Using-Robot-Framework\vs_codes\tests_robot_framework\changehostname_webinterface.robot">
-<test id="s1-t1" name="Open Example Website" line="11">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-02-26T11:56:29.160574" level="INFO">Opening browser 'Chrome' to base url 'http://192.168.13.1/cgi-bin/luci/admin/system/system'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-02-26T11:56:29.160574" elapsed="2.958678"/>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-02-27T14:11:29.922966" rpa="false" schemaversion="5">
+<suite id="s1" name="Github Cloning Repository Powershell" source="c:\Users\MSI\Desktop\Studies\PFE\Automation-Test-Using-Robot-Framework\vs_codes\tests_robot_framework\github_automatisation\github_cloning_repository_powershell.robot">
+<test id="s1-t1" name="Clone OpenWRT Repository" line="5">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T14:11:29.942853" level="INFO">${cd_command} = cd .DesktopStudiesPFE</msg>
+<var>${cd_command}</var>
+<arg>cd .\Desktop\Studies\PFE\</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T14:11:29.942853" elapsed="0.001012"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-02-26T11:56:32.119881" elapsed="0.114523"/>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T14:11:29.944562" level="INFO">${mkdir_command} = mkdir mmmm</msg>
+<var>${mkdir_command}</var>
+<arg>mkdir mmmm</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T14:11:29.944562" elapsed="0.000000"/>
 </kw>
-<kw name="Input Username">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>id=luci_username</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-02-26T11:56:32.234404" elapsed="0.033730"/>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-02-27T14:11:29.946402" level="INFO">${git_clone_command} = git clone https://github.com/natsumed/openwrt.git</msg>
+<var>${git_clone_command}</var>
+<arg>git clone https://github.com/natsumed/openwrt.git</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-02-27T14:11:29.946402" elapsed="0.000000"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-02-26T11:56:32.269152" level="INFO">Typing text 'root' into text field 'id=luci_username'.</msg>
-<arg>id=luci_username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-26T11:56:32.268134" elapsed="0.075106"/>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-02-27T14:11:29.955718" level="INFO">Running command 'cd .DesktopStudiesPFE 2&gt;&amp;1'.</msg>
+<arg>${cd_command}</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-02-27T14:11:29.948075" elapsed="0.014852"/>
 </kw>
-<arg>${USERNAME}</arg>
-<status status="PASS" start="2024-02-26T11:56:32.234404" elapsed="0.108836"/>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-02-27T14:11:29.966807" level="INFO">Running command 'mkdir mmmm 2&gt;&amp;1'.</msg>
+<arg>${mkdir_command}</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-02-27T14:11:29.962927" elapsed="0.010475"/>
 </kw>
-<kw name="Click Login Button">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>class=cbi-button-positive</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-02-26T11:56:32.343240" elapsed="0.016454"/>
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-02-27T14:11:29.979231" level="INFO">Running command 'git clone https://github.com/natsumed/openwrt.git 2&gt;&amp;1'.</msg>
+<arg>${git_clone_command}</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-02-27T14:11:29.973402" elapsed="57.121930"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-02-26T11:56:32.359694" level="INFO">Clicking button 'class=cbi-button-positive'.</msg>
-<arg>class=cbi-button-positive</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-26T11:56:32.359694" elapsed="0.609032"/>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Check Cloning Status">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-02-27T14:12:27.095332" level="INFO">Running command 'git status 2&gt;&amp;1'.</msg>
+<msg time="2024-02-27T14:12:27.125347" level="INFO">${output} = On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be com...</msg>
+<var>${output}</var>
+<arg>git status</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-02-27T14:12:27.095332" elapsed="0.030015"/>
 </kw>
-<status status="PASS" start="2024-02-26T11:56:32.343240" elapsed="0.625486"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T14:12:27.125347" level="INFO">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	modified:   log.html
+	modified:   output.xml
+	modified:   report.html
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	VS_codes/tests_Robot_Framework/GitHub_Automatisation/
+	interactive_console_output.xml
+	openwrt/
+	selenium-screenshot-1.png
+	selenium-screenshot-10.png
+	selenium-screenshot-11.png
+	selenium-screenshot-12.png
+	selenium-screenshot-13.png
+	selenium-screenshot-14.png
+	selenium-screenshot-15.png
+	selenium-screenshot-2.png
+	selenium-screenshot-3.png
+	selenium-screenshot-4.png
+	selenium-screenshot-5.png
+	selenium-screenshot-6.png
+	selenium-screenshot-7.png
+	selenium-screenshot-8.png
+	selenium-screenshot-9.png
+
+no changes added to commit (use "git add" and/or "git commit -a")</msg>
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T14:12:27.125347" elapsed="0.000000"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>class=cbi-input-text</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-02-26T11:56:32.968726" elapsed="1.094691"/>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2024-02-27T14:12:27.125347" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:27.125347" level="FAIL">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>'nothing to commit' in ${output}</arg>
+<arg>Fail</arg>
+<arg>Cloning not complete yet</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="FAIL" start="2024-02-27T14:12:27.125347" elapsed="0.000000">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
 </kw>
-<kw name="Input Hostname">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>class=cbi-input-text</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-02-26T11:56:34.063417" elapsed="0.013275"/>
+<status status="FAIL" start="2024-02-27T14:12:27.095332" elapsed="0.030015">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-02-26T11:56:34.076692" level="INFO">Typing text 'TheAdmin' into text field 'class=cbi-input-text'.</msg>
-<arg>class=cbi-input-text</arg>
-<arg>${hostname}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-26T11:56:34.076692" elapsed="0.051176"/>
+<kw name="Check Cloning Status">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-02-27T14:12:28.125776" level="INFO">Running command 'git status 2&gt;&amp;1'.</msg>
+<msg time="2024-02-27T14:12:28.149491" level="INFO">${output} = On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be com...</msg>
+<var>${output}</var>
+<arg>git status</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-02-27T14:12:28.125776" elapsed="0.023715"/>
 </kw>
-<arg>${Hostname}</arg>
-<status status="PASS" start="2024-02-26T11:56:34.063417" elapsed="0.064451"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T14:12:28.149491" level="INFO">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	modified:   log.html
+	modified:   output.xml
+	modified:   report.html
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	VS_codes/tests_Robot_Framework/GitHub_Automatisation/
+	interactive_console_output.xml
+	openwrt/
+	selenium-screenshot-1.png
+	selenium-screenshot-10.png
+	selenium-screenshot-11.png
+	selenium-screenshot-12.png
+	selenium-screenshot-13.png
+	selenium-screenshot-14.png
+	selenium-screenshot-15.png
+	selenium-screenshot-2.png
+	selenium-screenshot-3.png
+	selenium-screenshot-4.png
+	selenium-screenshot-5.png
+	selenium-screenshot-6.png
+	selenium-screenshot-7.png
+	selenium-screenshot-8.png
+	selenium-screenshot-9.png
+
+no changes added to commit (use "git add" and/or "git commit -a")</msg>
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T14:12:28.149491" elapsed="0.000000"/>
 </kw>
-<kw name="Click SAVE&amp;APPLY Button">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-02-26T11:56:34.127868" level="INFO">Clicking element 'xpath=//li[contains(text(), 'Save &amp; Apply')]'.</msg>
-<arg>xpath=//li[contains(text(), 'Save &amp; Apply')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-26T11:56:34.127868" elapsed="0.030264"/>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2024-02-27T14:12:28.149491" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:28.149491" level="FAIL">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>'nothing to commit' in ${output}</arg>
+<arg>Fail</arg>
+<arg>Cloning not complete yet</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="FAIL" start="2024-02-27T14:12:28.149491" elapsed="0.007340">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
 </kw>
-<status status="PASS" start="2024-02-26T11:56:34.127868" elapsed="0.030264"/>
+<status status="FAIL" start="2024-02-27T14:12:28.125776" elapsed="0.031055">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Check Cloning Status">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-02-27T14:12:29.166480" level="INFO">Running command 'git status 2&gt;&amp;1'.</msg>
+<msg time="2024-02-27T14:12:29.197228" level="INFO">${output} = On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be com...</msg>
+<var>${output}</var>
+<arg>git status</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-02-27T14:12:29.157632" elapsed="0.039596"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T14:12:29.197228" level="INFO">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	modified:   log.html
+	modified:   output.xml
+	modified:   report.html
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	VS_codes/tests_Robot_Framework/GitHub_Automatisation/
+	interactive_console_output.xml
+	openwrt/
+	selenium-screenshot-1.png
+	selenium-screenshot-10.png
+	selenium-screenshot-11.png
+	selenium-screenshot-12.png
+	selenium-screenshot-13.png
+	selenium-screenshot-14.png
+	selenium-screenshot-15.png
+	selenium-screenshot-2.png
+	selenium-screenshot-3.png
+	selenium-screenshot-4.png
+	selenium-screenshot-5.png
+	selenium-screenshot-6.png
+	selenium-screenshot-7.png
+	selenium-screenshot-8.png
+	selenium-screenshot-9.png
+
+no changes added to commit (use "git add" and/or "git commit -a")</msg>
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T14:12:29.197228" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2024-02-27T14:12:29.197228" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:29.197228" level="FAIL">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>'nothing to commit' in ${output}</arg>
+<arg>Fail</arg>
+<arg>Cloning not complete yet</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="FAIL" start="2024-02-27T14:12:29.197228" elapsed="0.000000">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<status status="FAIL" start="2024-02-27T14:12:29.157632" elapsed="0.039596">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Check Cloning Status">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-02-27T14:12:30.197809" level="INFO">Running command 'git status 2&gt;&amp;1'.</msg>
+<msg time="2024-02-27T14:12:30.234188" level="INFO">${output} = On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be com...</msg>
+<var>${output}</var>
+<arg>git status</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-02-27T14:12:30.197809" elapsed="0.036379"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T14:12:30.234188" level="INFO">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	modified:   log.html
+	modified:   output.xml
+	modified:   report.html
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	VS_codes/tests_Robot_Framework/GitHub_Automatisation/
+	interactive_console_output.xml
+	openwrt/
+	selenium-screenshot-1.png
+	selenium-screenshot-10.png
+	selenium-screenshot-11.png
+	selenium-screenshot-12.png
+	selenium-screenshot-13.png
+	selenium-screenshot-14.png
+	selenium-screenshot-15.png
+	selenium-screenshot-2.png
+	selenium-screenshot-3.png
+	selenium-screenshot-4.png
+	selenium-screenshot-5.png
+	selenium-screenshot-6.png
+	selenium-screenshot-7.png
+	selenium-screenshot-8.png
+	selenium-screenshot-9.png
+
+no changes added to commit (use "git add" and/or "git commit -a")</msg>
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T14:12:30.234188" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2024-02-27T14:12:30.234188" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:30.234188" level="FAIL">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>'nothing to commit' in ${output}</arg>
+<arg>Fail</arg>
+<arg>Cloning not complete yet</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="FAIL" start="2024-02-27T14:12:30.234188" elapsed="0.000000">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<status status="FAIL" start="2024-02-27T14:12:30.197809" elapsed="0.039909">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Check Cloning Status">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-02-27T14:12:31.239987" level="INFO">Running command 'git status 2&gt;&amp;1'.</msg>
+<msg time="2024-02-27T14:12:31.268113" level="INFO">${output} = On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be com...</msg>
+<var>${output}</var>
+<arg>git status</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-02-27T14:12:31.237963" elapsed="0.030150"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T14:12:31.268113" level="INFO">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	modified:   log.html
+	modified:   output.xml
+	modified:   report.html
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	VS_codes/tests_Robot_Framework/GitHub_Automatisation/
+	interactive_console_output.xml
+	openwrt/
+	selenium-screenshot-1.png
+	selenium-screenshot-10.png
+	selenium-screenshot-11.png
+	selenium-screenshot-12.png
+	selenium-screenshot-13.png
+	selenium-screenshot-14.png
+	selenium-screenshot-15.png
+	selenium-screenshot-2.png
+	selenium-screenshot-3.png
+	selenium-screenshot-4.png
+	selenium-screenshot-5.png
+	selenium-screenshot-6.png
+	selenium-screenshot-7.png
+	selenium-screenshot-8.png
+	selenium-screenshot-9.png
+
+no changes added to commit (use "git add" and/or "git commit -a")</msg>
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T14:12:31.268113" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2024-02-27T14:12:31.268113" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:31.268113" level="FAIL">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>'nothing to commit' in ${output}</arg>
+<arg>Fail</arg>
+<arg>Cloning not complete yet</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="FAIL" start="2024-02-27T14:12:31.268113" elapsed="0.000000">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<status status="FAIL" start="2024-02-27T14:12:31.237963" elapsed="0.030150">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Check Cloning Status">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-02-27T14:12:32.268370" level="INFO">Running command 'git status 2&gt;&amp;1'.</msg>
+<msg time="2024-02-27T14:12:32.308662" level="INFO">${output} = On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be com...</msg>
+<var>${output}</var>
+<arg>git status</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-02-27T14:12:32.268370" elapsed="0.040292"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T14:12:32.308662" level="INFO">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	modified:   log.html
+	modified:   output.xml
+	modified:   report.html
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	VS_codes/tests_Robot_Framework/GitHub_Automatisation/
+	interactive_console_output.xml
+	openwrt/
+	selenium-screenshot-1.png
+	selenium-screenshot-10.png
+	selenium-screenshot-11.png
+	selenium-screenshot-12.png
+	selenium-screenshot-13.png
+	selenium-screenshot-14.png
+	selenium-screenshot-15.png
+	selenium-screenshot-2.png
+	selenium-screenshot-3.png
+	selenium-screenshot-4.png
+	selenium-screenshot-5.png
+	selenium-screenshot-6.png
+	selenium-screenshot-7.png
+	selenium-screenshot-8.png
+	selenium-screenshot-9.png
+
+no changes added to commit (use "git add" and/or "git commit -a")</msg>
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T14:12:32.308662" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2024-02-27T14:12:32.308662" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:32.308662" level="FAIL">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>'nothing to commit' in ${output}</arg>
+<arg>Fail</arg>
+<arg>Cloning not complete yet</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="FAIL" start="2024-02-27T14:12:32.308662" elapsed="0.000000">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<status status="FAIL" start="2024-02-27T14:12:32.268370" elapsed="0.040292">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Check Cloning Status">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-02-27T14:12:33.308679" level="INFO">Running command 'git status 2&gt;&amp;1'.</msg>
+<msg time="2024-02-27T14:12:33.345215" level="INFO">${output} = On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be com...</msg>
+<var>${output}</var>
+<arg>git status</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-02-27T14:12:33.308679" elapsed="0.036536"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T14:12:33.345215" level="INFO">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	modified:   log.html
+	modified:   output.xml
+	modified:   report.html
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	VS_codes/tests_Robot_Framework/GitHub_Automatisation/
+	interactive_console_output.xml
+	openwrt/
+	selenium-screenshot-1.png
+	selenium-screenshot-10.png
+	selenium-screenshot-11.png
+	selenium-screenshot-12.png
+	selenium-screenshot-13.png
+	selenium-screenshot-14.png
+	selenium-screenshot-15.png
+	selenium-screenshot-2.png
+	selenium-screenshot-3.png
+	selenium-screenshot-4.png
+	selenium-screenshot-5.png
+	selenium-screenshot-6.png
+	selenium-screenshot-7.png
+	selenium-screenshot-8.png
+	selenium-screenshot-9.png
+
+no changes added to commit (use "git add" and/or "git commit -a")</msg>
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T14:12:33.345215" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2024-02-27T14:12:33.345215" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:33.353048" level="FAIL">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>'nothing to commit' in ${output}</arg>
+<arg>Fail</arg>
+<arg>Cloning not complete yet</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="FAIL" start="2024-02-27T14:12:33.345215" elapsed="0.007833">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<status status="FAIL" start="2024-02-27T14:12:33.308679" elapsed="0.044369">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Check Cloning Status">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-02-27T14:12:34.359514" level="INFO">Running command 'git status 2&gt;&amp;1'.</msg>
+<msg time="2024-02-27T14:12:34.382619" level="INFO">${output} = On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be com...</msg>
+<var>${output}</var>
+<arg>git status</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-02-27T14:12:34.353618" elapsed="0.029001"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T14:12:34.382619" level="INFO">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	modified:   log.html
+	modified:   output.xml
+	modified:   report.html
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	VS_codes/tests_Robot_Framework/GitHub_Automatisation/
+	interactive_console_output.xml
+	openwrt/
+	selenium-screenshot-1.png
+	selenium-screenshot-10.png
+	selenium-screenshot-11.png
+	selenium-screenshot-12.png
+	selenium-screenshot-13.png
+	selenium-screenshot-14.png
+	selenium-screenshot-15.png
+	selenium-screenshot-2.png
+	selenium-screenshot-3.png
+	selenium-screenshot-4.png
+	selenium-screenshot-5.png
+	selenium-screenshot-6.png
+	selenium-screenshot-7.png
+	selenium-screenshot-8.png
+	selenium-screenshot-9.png
+
+no changes added to commit (use "git add" and/or "git commit -a")</msg>
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T14:12:34.382619" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2024-02-27T14:12:34.382619" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:34.382619" level="FAIL">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>'nothing to commit' in ${output}</arg>
+<arg>Fail</arg>
+<arg>Cloning not complete yet</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="FAIL" start="2024-02-27T14:12:34.382619" elapsed="0.000000">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<status status="FAIL" start="2024-02-27T14:12:34.353618" elapsed="0.029001">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Check Cloning Status">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-02-27T14:12:35.390350" level="INFO">Running command 'git status 2&gt;&amp;1'.</msg>
+<msg time="2024-02-27T14:12:35.424282" level="INFO">${output} = On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be com...</msg>
+<var>${output}</var>
+<arg>git status</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-02-27T14:12:35.383220" elapsed="0.041062"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T14:12:35.424282" level="INFO">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	modified:   log.html
+	modified:   output.xml
+	modified:   report.html
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	VS_codes/tests_Robot_Framework/GitHub_Automatisation/
+	interactive_console_output.xml
+	openwrt/
+	selenium-screenshot-1.png
+	selenium-screenshot-10.png
+	selenium-screenshot-11.png
+	selenium-screenshot-12.png
+	selenium-screenshot-13.png
+	selenium-screenshot-14.png
+	selenium-screenshot-15.png
+	selenium-screenshot-2.png
+	selenium-screenshot-3.png
+	selenium-screenshot-4.png
+	selenium-screenshot-5.png
+	selenium-screenshot-6.png
+	selenium-screenshot-7.png
+	selenium-screenshot-8.png
+	selenium-screenshot-9.png
+
+no changes added to commit (use "git add" and/or "git commit -a")</msg>
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T14:12:35.424282" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2024-02-27T14:12:35.424282" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:35.424282" level="FAIL">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>'nothing to commit' in ${output}</arg>
+<arg>Fail</arg>
+<arg>Cloning not complete yet</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="FAIL" start="2024-02-27T14:12:35.424282" elapsed="0.000000">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<status status="FAIL" start="2024-02-27T14:12:35.383220" elapsed="0.041062">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<kw name="Check Cloning Status">
+<kw name="Run" owner="OperatingSystem">
+<msg time="2024-02-27T14:12:36.430730" level="INFO">Running command 'git status 2&gt;&amp;1'.</msg>
+<msg time="2024-02-27T14:12:36.464789" level="INFO">${output} = On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be com...</msg>
+<var>${output}</var>
+<arg>git status</arg>
+<doc>Runs the given command in the system and returns the output.</doc>
+<status status="PASS" start="2024-02-27T14:12:36.424653" elapsed="0.040136"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-27T14:12:36.464789" level="INFO">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git restore &lt;file&gt;..." to discard changes in working directory)
+	modified:   log.html
+	modified:   output.xml
+	modified:   report.html
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	VS_codes/tests_Robot_Framework/GitHub_Automatisation/
+	interactive_console_output.xml
+	openwrt/
+	selenium-screenshot-1.png
+	selenium-screenshot-10.png
+	selenium-screenshot-11.png
+	selenium-screenshot-12.png
+	selenium-screenshot-13.png
+	selenium-screenshot-14.png
+	selenium-screenshot-15.png
+	selenium-screenshot-2.png
+	selenium-screenshot-3.png
+	selenium-screenshot-4.png
+	selenium-screenshot-5.png
+	selenium-screenshot-6.png
+	selenium-screenshot-7.png
+	selenium-screenshot-8.png
+	selenium-screenshot-9.png
+
+no changes added to commit (use "git add" and/or "git commit -a")</msg>
+<arg>${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-27T14:12:36.464789" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword Unless" owner="BuiltIn">
+<msg time="2024-02-27T14:12:36.464789" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:36.464789" level="FAIL">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>'nothing to commit' in ${output}</arg>
+<arg>Fail</arg>
+<arg>Cloning not complete yet</arg>
+<doc>*DEPRECATED since RF 5.0. Use Native IF/ELSE or `Run Keyword If` instead.*</doc>
+<status status="FAIL" start="2024-02-27T14:12:36.464789" elapsed="0.000000">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<status status="FAIL" start="2024-02-27T14:12:36.424653" elapsed="0.040136">Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<msg time="2024-02-27T14:12:36.464789" level="FAIL">Keyword 'Check Cloning Status' failed after retrying 10 times. The last error was: Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Check Cloning Status</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="FAIL" start="2024-02-27T14:12:27.095332" elapsed="9.369457">Keyword 'Check Cloning Status' failed after retrying 10 times. The last error was: Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-26T11:56:54.161634" level="INFO">Slept 20 seconds.</msg>
-<arg>20s</arg>
+<arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-26T11:56:34.158132" elapsed="20.003502"/>
+<status status="NOT RUN" start="2024-02-27T14:12:36.467460" elapsed="0.000000"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-02-26T11:56:54.169650" elapsed="2.196703"/>
-</kw>
-<status status="PASS" start="2024-02-26T11:56:29.160574" elapsed="27.215810"/>
+<status status="FAIL" start="2024-02-27T14:11:29.941387" elapsed="66.526073">Keyword 'Check Cloning Status' failed after retrying 10 times. The last error was: Evaluating expression '\'nothing to commit\' in On branch main\nYour branch is ahead of \'origin/main\' by 1 commit.\n  (use "git push" to publish your local commits)\n\nChanges not staged for commit:\n  (use "git add &lt;file&gt;..." to update what will be committed)\n  (use "git restore &lt;file&gt;..." to discard changes in working directory)\n\tmodified:   log.html\n\tmodified:   output.xml\n\tmodified:   report.html\n\nUntracked files:\n  (use "git add &lt;file&gt;..." to include in what will be committed)\n\tVS_codes/tests_Robot_Framework/GitHub_Automatisation/\n\tinteractive_console_output.xml\n\topenwrt/\n\tselenium-screenshot-1.png\n\tselenium-screenshot-10.png\n\tselenium-screenshot-11.png\n\tselenium-screenshot-12.png\n\tselenium-screenshot-13.png\n\tselenium-screenshot-14.png\n\tselenium-screenshot-15.png\n\tselenium-screenshot-2.png\n\tselenium-screenshot-3.png\n\tselenium-screenshot-4.png\n\tselenium-screenshot-5.png\n\tselenium-screenshot-6.png\n\tselenium-screenshot-7.png\n\tselenium-screenshot-8.png\n\tselenium-screenshot-9.png\n\nno changes added to commit (use "git add" and/or "git commit -a")' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
 </test>
-<status status="PASS" start="2024-02-26T11:56:28.990884" elapsed="27.435925"/>
+<status status="FAIL" start="2024-02-27T14:11:29.924965" elapsed="66.542495"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Changehostname Webinterface">Changehostname Webinterface</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Github Cloning Repository Powershell">Github Cloning Repository Powershell</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-02-27T14:12:27.125347" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:28.149491" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:29.197228" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:30.234188" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:31.268113" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:32.308662" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:33.345215" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:34.382619" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:35.424282" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
+<msg time="2024-02-27T14:12:36.464789" level="WARN">Keyword 'BuiltIn.Run Keyword Unless' is deprecated. </msg>
 </errors>
 </robot>
