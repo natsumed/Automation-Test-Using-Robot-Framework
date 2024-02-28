@@ -1,136 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-02-28T09:45:19.923420" rpa="false" schemaversion="5">
-<suite id="s1" name="UpgradeImage WebInterface" source="/home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework/VS_codes/tests_Robot_Framework/UpgradeImage_WebInterface.robot">
-<test id="s1-t1" name="Opening Browser" line="11">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-02-28T09:45:20.232228" level="INFO">Opening browser 'Chrome' to base url 'http://192.168.13.1/cgi-bin/luci/admin/system/flash'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-02-28T09:45:20.231428" elapsed="1.911657"/>
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-02-28T10:14:23.852207" rpa="false" schemaversion="5">
+<suite id="s1" name="Github Pushing Repository" source="/home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework/VS_codes/tests_Robot_Framework/GitHub_Automatisation/Github_Pushing_Repository.robot">
+<test id="s1-t1" name="Clone From GitHub" line="13">
+<kw name="Open Connection" owner="SSHLibrary">
+<arg>${LAPTOP_HOST}</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="PASS" start="2024-02-28T10:14:24.220198" elapsed="0.000837"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-02-28T09:45:22.144333" elapsed="0.106772"/>
+<kw name="Login" owner="SSHLibrary">
+<msg time="2024-02-28T10:14:24.222221" level="INFO">Logging into '192.168.1.100:22' as 'lenovo'.</msg>
+<msg time="2024-02-28T10:14:25.631342" level="INFO">Read output: Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 6.5.0-21-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+24 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+Last login: Wed Feb 28 10:11:40 2024 from 192.168.1.100
+[?2004hlenovo@lenovo-Lenovo-ideapad-130-15IKB:~$</msg>
+<arg>${LAPTOP_USERNAME}</arg>
+<arg>${LAPTOP_PASSWORD}</arg>
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<status status="PASS" start="2024-02-28T10:14:24.221573" elapsed="1.410635"/>
 </kw>
-<kw name="Input Username">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-02-28T09:45:22.255646" level="INFO">Typing text 'root' into text field 'id=luci_username'.</msg>
-<arg>id=luci_username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-28T09:45:22.254124" elapsed="0.235537"/>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2024-02-28T10:14:25.634470" level="INFO">Executing command 'cd /home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework'.</msg>
+<msg time="2024-02-28T10:14:25.659630" level="INFO">Command exited with return code 0.</msg>
+<msg time="2024-02-28T10:14:25.660519" level="INFO">${result} = </msg>
+<var>${result}</var>
+<arg>cd /home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2024-02-28T10:14:25.633411" elapsed="0.027674"/>
 </kw>
-<arg>${USERNAME}</arg>
-<status status="PASS" start="2024-02-28T09:45:22.252372" elapsed="0.237697"/>
-</kw>
-<kw name="Click Login Button">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-02-28T09:45:22.492716" level="INFO">Clicking button 'class=cbi-button-positive'.</msg>
-<arg>class=cbi-button-positive</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-28T09:45:22.491900" elapsed="0.600467"/>
-</kw>
-<status status="PASS" start="2024-02-28T09:45:22.490805" elapsed="0.602256"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-28T09:45:28.098482" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-28T09:45:23.096491" elapsed="5.002449"/>
-</kw>
-<kw name="Click Flash Image Button">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-02-28T09:45:28.101975" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Flash image...')]'.</msg>
-<arg>xpath=//button[contains(text(), 'Flash image...')]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-28T09:45:28.101225" elapsed="0.122109"/>
-</kw>
-<status status="PASS" start="2024-02-28T09:45:28.100089" elapsed="0.123891"/>
-</kw>
-<kw name="Click Browse Button">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-02-28T09:45:28.227530" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Browse…')]'.</msg>
-<arg>xpath=//button[contains(text(), 'Browse…')]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-28T09:45:28.226544" elapsed="0.134226"/>
-</kw>
-<status status="PASS" start="2024-02-28T09:45:28.225213" elapsed="0.136011"/>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2024-02-28T10:14:25.663525" level="INFO">Executing command 'git add .'.</msg>
+<msg time="2024-02-28T10:14:25.709433" level="INFO">Command exited with return code 128.</msg>
+<msg time="2024-02-28T10:14:25.709904" level="INFO">${result} = </msg>
+<var>${result}</var>
+<arg>git add .</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2024-02-28T10:14:25.662759" elapsed="0.047330"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-28T09:45:30.363188" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-02-28T10:14:27.711451" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-28T09:45:28.362285" elapsed="2.002474"/>
+<status status="PASS" start="2024-02-28T10:14:25.710576" elapsed="2.001818"/>
 </kw>
-<status status="PASS" start="2024-02-28T09:45:20.228781" elapsed="10.146515"/>
-</test>
-<test id="s1-t2" name="Running Python Process" line="20">
-<kw name="Run Process" owner="Process">
-<msg time="2024-02-28T09:45:30.405561" level="INFO">Starting process:
-python3 /home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework/VS_codes/tests_Robot_Framework/file_upload.py</msg>
-<msg time="2024-02-28T09:45:30.432640" level="INFO">Waiting for process to complete.</msg>
-<msg time="2024-02-28T09:45:52.839679" level="INFO">Process completed.</msg>
-<arg>python3</arg>
-<arg>/home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework/VS_codes/tests_Robot_Framework/file_upload.py</arg>
-<doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2024-02-28T09:45:30.392620" elapsed="22.448285"/>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2024-02-28T10:14:27.715567" level="INFO">Executing command 'git commit -m "new msg"'.</msg>
+<msg time="2024-02-28T10:14:27.746947" level="INFO">Command exited with return code 128.</msg>
+<msg time="2024-02-28T10:14:27.747726" level="INFO">${result} = </msg>
+<var>${result}</var>
+<arg>git commit -m "new msg"</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2024-02-28T10:14:27.714093" elapsed="0.034049"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-28T09:46:12.845888" level="INFO">Slept 20 seconds.</msg>
-<arg>20s</arg>
+<msg time="2024-02-28T10:14:29.750344" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-28T09:45:52.843392" elapsed="20.004172"/>
+<status status="PASS" start="2024-02-28T10:14:27.749269" elapsed="2.001641"/>
 </kw>
-<status status="PASS" start="2024-02-28T09:45:30.383653" elapsed="42.467189"/>
-</test>
-<test id="s1-t3" name="Uploading" line="25">
-<kw name="Click Upload Button">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-02-28T09:46:12.879369" level="INFO">Clicking element 'css:div.right button.btn.cbi-button-action.important'.</msg>
-<arg>css:div.right button.btn.cbi-button-action.important</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-28T09:46:12.873963" elapsed="0.120605"/>
-</kw>
-<status status="PASS" start="2024-02-28T09:46:12.866770" elapsed="0.128481"/>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2024-02-28T10:14:29.753156" level="INFO">Executing command 'git push'.</msg>
+<msg time="2024-02-28T10:14:29.769794" level="INFO">Command exited with return code 128.</msg>
+<msg time="2024-02-28T10:14:29.770445" level="INFO">${result} = </msg>
+<var>${result}</var>
+<arg>git push</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2024-02-28T10:14:29.752175" elapsed="0.018723"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-28T09:46:23.000835" level="INFO">Slept 10 seconds.</msg>
-<arg>10s</arg>
+<msg time="2024-02-28T10:14:34.773949" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-28T09:46:12.999551" elapsed="10.002375"/>
+<status status="PASS" start="2024-02-28T10:14:29.772588" elapsed="5.002636"/>
 </kw>
-<kw name="Click Continue Button">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-02-28T09:46:23.009030" level="INFO">Clicking element 'css:div.right button.btn.cbi-button-action.important'.</msg>
-<arg>css:div.right button.btn.cbi-button-action.important</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-28T09:46:23.006188" elapsed="0.095481"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-02-28T10:14:34.779960" level="INFO"/>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-02-28T10:14:34.778001" elapsed="0.002948"/>
 </kw>
-<status status="PASS" start="2024-02-28T09:46:23.003912" elapsed="0.098462"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-28T09:49:43.104810" level="INFO">Slept 3 minutes 20 seconds.</msg>
-<arg>200s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-28T09:46:23.103302" elapsed="200.002934"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-02-28T09:49:43.108710" elapsed="0.147901"/>
-</kw>
-<status status="PASS" start="2024-02-28T09:46:12.854885" elapsed="210.402536"/>
+<doc>Transfer the firmware upgrade file from the laptop to the card</doc>
+<status status="PASS" start="2024-02-28T10:14:24.217594" elapsed="10.567982"/>
 </test>
-<status status="PASS" start="2024-02-28T09:45:19.931993" elapsed="263.326678"/>
+<status status="PASS" start="2024-02-28T10:14:23.858910" elapsed="10.932422"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="UpgradeImage WebInterface">UpgradeImage WebInterface</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Github Pushing Repository">Github Pushing Repository</stat>
 </suite>
 </statistics>
 <errors>
