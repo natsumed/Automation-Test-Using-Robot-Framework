@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-02-28T10:14:23.852207" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-02-28T10:33:43.125465" rpa="false" schemaversion="5">
 <suite id="s1" name="Github Pushing Repository" source="/home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework/VS_codes/tests_Robot_Framework/GitHub_Automatisation/Github_Pushing_Repository.robot">
-<test id="s1-t1" name="Clone From GitHub" line="13">
+<test id="s1-t1" name="Clone From GitHub" line="12">
 <kw name="Open Connection" owner="SSHLibrary">
 <arg>${LAPTOP_HOST}</arg>
 <doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
-<status status="PASS" start="2024-02-28T10:14:24.220198" elapsed="0.000837"/>
+<status status="PASS" start="2024-02-28T10:33:43.358582" elapsed="0.001224"/>
 </kw>
 <kw name="Login" owner="SSHLibrary">
-<msg time="2024-02-28T10:14:24.222221" level="INFO">Logging into '192.168.1.100:22' as 'lenovo'.</msg>
-<msg time="2024-02-28T10:14:25.631342" level="INFO">Read output: Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 6.5.0-21-generic x86_64)
+<msg time="2024-02-28T10:33:43.362283" level="INFO">Logging into '192.168.1.100:22' as 'lenovo'.</msg>
+<msg time="2024-02-28T10:33:44.758523" level="INFO">Read output: Welcome to Ubuntu 22.04.4 LTS (GNU/Linux 6.5.0-21-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com
  * Management:     https://landscape.canonical.com
@@ -22,77 +22,99 @@ Expanded Security Maintenance for Applications is not enabled.
 24 additional security updates can be applied with ESM Apps.
 Learn more about enabling ESM Apps service at https://ubuntu.com/esm
 
-Last login: Wed Feb 28 10:11:40 2024 from 192.168.1.100
+Last login: Wed Feb 28 10:32:24 2024 from 192.168.1.100
 [?2004hlenovo@lenovo-Lenovo-ideapad-130-15IKB:~$</msg>
 <arg>${LAPTOP_USERNAME}</arg>
 <arg>${LAPTOP_PASSWORD}</arg>
 <doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
-<status status="PASS" start="2024-02-28T10:14:24.221573" elapsed="1.410635"/>
+<status status="PASS" start="2024-02-28T10:33:43.360995" elapsed="1.398942"/>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2024-02-28T10:14:25.634470" level="INFO">Executing command 'cd /home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework'.</msg>
-<msg time="2024-02-28T10:14:25.659630" level="INFO">Command exited with return code 0.</msg>
-<msg time="2024-02-28T10:14:25.660519" level="INFO">${result} = </msg>
-<var>${result}</var>
-<arg>cd /home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework</arg>
+<msg time="2024-02-28T10:33:44.768846" level="INFO">Executing command 'cd /home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework'.</msg>
+<msg time="2024-02-28T10:33:44.792009" level="INFO">Command exited with return code 0.</msg>
+<msg time="2024-02-28T10:33:44.794032" level="INFO">${result_cd} = </msg>
+<var>${result_cd}</var>
+<arg>cd ${PROJECT_DIRECTORY}</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2024-02-28T10:14:25.633411" elapsed="0.027674"/>
+<status status="PASS" start="2024-02-28T10:33:44.762297" elapsed="0.032734"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>"${result_cd}" != ""</arg>
+<arg>Check Output</arg>
+<arg>${result_cd}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-02-28T10:33:44.799451" elapsed="0.002348"/>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2024-02-28T10:14:25.663525" level="INFO">Executing command 'git add .'.</msg>
-<msg time="2024-02-28T10:14:25.709433" level="INFO">Command exited with return code 128.</msg>
-<msg time="2024-02-28T10:14:25.709904" level="INFO">${result} = </msg>
-<var>${result}</var>
+<msg time="2024-02-28T10:33:44.806484" level="INFO">Executing command 'git add .'.</msg>
+<msg time="2024-02-28T10:33:44.851999" level="INFO">Command exited with return code 128.</msg>
+<msg time="2024-02-28T10:33:44.853143" level="INFO">${result_add} = </msg>
+<var>${result_add}</var>
 <arg>git add .</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2024-02-28T10:14:25.662759" elapsed="0.047330"/>
+<status status="PASS" start="2024-02-28T10:33:44.804724" elapsed="0.048865"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>"${result_add}" != ""</arg>
+<arg>Check Output</arg>
+<arg>${result_add}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-02-28T10:33:44.855042" elapsed="0.001068"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-28T10:14:27.711451" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-02-28T10:33:46.858589" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-28T10:14:25.710576" elapsed="2.001818"/>
+<status status="PASS" start="2024-02-28T10:33:44.857402" elapsed="2.001985"/>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2024-02-28T10:14:27.715567" level="INFO">Executing command 'git commit -m "new msg"'.</msg>
-<msg time="2024-02-28T10:14:27.746947" level="INFO">Command exited with return code 128.</msg>
-<msg time="2024-02-28T10:14:27.747726" level="INFO">${result} = </msg>
-<var>${result}</var>
-<arg>git commit -m "new msg"</arg>
+<msg time="2024-02-28T10:33:46.864276" level="INFO">Executing command 'git commit -m "new msg"'.</msg>
+<msg time="2024-02-28T10:33:46.893853" level="INFO">Command exited with return code 128.</msg>
+<msg time="2024-02-28T10:33:46.895193" level="INFO">${result_commit} = </msg>
+<var>${result_commit}</var>
+<arg>git commit -m "${COMMIT_MESSAGE}"</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2024-02-28T10:14:27.714093" elapsed="0.034049"/>
+<status status="PASS" start="2024-02-28T10:33:46.861452" elapsed="0.034421"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>"${result_commit}" != ""</arg>
+<arg>Check Output</arg>
+<arg>${result_commit}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-02-28T10:33:46.898372" elapsed="0.001915"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-28T10:14:29.750344" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-02-28T10:33:48.904411" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-28T10:14:27.749269" elapsed="2.001641"/>
+<status status="PASS" start="2024-02-28T10:33:46.902684" elapsed="2.002736"/>
 </kw>
 <kw name="Execute Command" owner="SSHLibrary">
-<msg time="2024-02-28T10:14:29.753156" level="INFO">Executing command 'git push'.</msg>
-<msg time="2024-02-28T10:14:29.769794" level="INFO">Command exited with return code 128.</msg>
-<msg time="2024-02-28T10:14:29.770445" level="INFO">${result} = </msg>
-<var>${result}</var>
+<msg time="2024-02-28T10:33:48.908390" level="INFO">Executing command 'git push'.</msg>
+<msg time="2024-02-28T10:33:48.942540" level="INFO">Command exited with return code 128.</msg>
+<msg time="2024-02-28T10:33:48.943965" level="INFO">${result_push} = </msg>
+<var>${result_push}</var>
 <arg>git push</arg>
 <doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
-<status status="PASS" start="2024-02-28T10:14:29.752175" elapsed="0.018723"/>
+<status status="PASS" start="2024-02-28T10:33:48.907087" elapsed="0.037686"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>"${result_push}" != ""</arg>
+<arg>Check Output</arg>
+<arg>${result_push}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-02-28T10:33:48.946998" elapsed="0.001421"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-28T10:14:34.773949" level="INFO">Slept 5 seconds.</msg>
+<msg time="2024-02-28T10:33:53.952598" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-28T10:14:29.772588" elapsed="5.002636"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-02-28T10:14:34.779960" level="INFO"/>
-<arg>${result}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-02-28T10:14:34.778001" elapsed="0.002948"/>
+<status status="PASS" start="2024-02-28T10:33:48.951101" elapsed="5.002331"/>
 </kw>
 <doc>Transfer the firmware upgrade file from the laptop to the card</doc>
-<status status="PASS" start="2024-02-28T10:14:24.217594" elapsed="10.567982"/>
+<status status="PASS" start="2024-02-28T10:33:43.355914" elapsed="10.598741"/>
 </test>
-<status status="PASS" start="2024-02-28T10:14:23.858910" elapsed="10.932422"/>
+<status status="PASS" start="2024-02-28T10:33:43.133676" elapsed="10.824340"/>
 </suite>
 <statistics>
 <total>
