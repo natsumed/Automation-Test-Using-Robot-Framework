@@ -41,7 +41,7 @@ pyautogui.click()
 
 time.sleep(2)
 # Type 'openwrt-'
-pyautogui.typewrite('openwrt-ipq40xx-generic-wallys_dr40x9-squashfs-sysupgrade', interval=0.1)
+pyautogui.typewrite('openwrt-ipq', interval=1)
 
 #pyautogui.press('o')
 

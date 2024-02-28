@@ -18,7 +18,7 @@ Opening Browser
     Click Browse Button
     Sleep    2s
 Running Python Process    
-    Run Process    python    ${CURDIR}/file_upload_windows.py    
+    Run Process    python3    ${CURDIR}/file_upload.py    
     Sleep   20s
 
 
@@ -26,7 +26,8 @@ Uploading
     Click Upload Button
     Sleep    10s
     Click Continue Button
-    Sleep    200s
+    Sleep    100s
+    Click Login Button
     Close Browser
 
 *** Keywords ***

@@ -1,127 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-02-16T16:19:39.676583" rpa="false" schemaversion="5">
-<suite id="s1" name="UpgradeImage WebInterface" source="/home/lenovo/Desktop/PFE/VS_codes/tests_Robot_Framework/UpgradeImage_WebInterface.robot">
-<test id="s1-t1" name="Opening Browser" line="12">
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-02-28T09:45:19.923420" rpa="false" schemaversion="5">
+<suite id="s1" name="UpgradeImage WebInterface" source="/home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework/VS_codes/tests_Robot_Framework/UpgradeImage_WebInterface.robot">
+<test id="s1-t1" name="Opening Browser" line="11">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-02-16T16:19:39.956400" level="INFO">Opening browser 'Chrome' to base url 'http://192.168.13.1/cgi-bin/luci/admin/system/flash'.</msg>
+<msg time="2024-02-28T09:45:20.232228" level="INFO">Opening browser 'Chrome' to base url 'http://192.168.13.1/cgi-bin/luci/admin/system/flash'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-02-16T16:19:39.953771" elapsed="1.776558"/>
+<status status="PASS" start="2024-02-28T09:45:20.231428" elapsed="1.911657"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-02-16T16:19:41.734637" elapsed="0.148489"/>
+<status status="PASS" start="2024-02-28T09:45:22.144333" elapsed="0.106772"/>
 </kw>
 <kw name="Input Username">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-02-16T16:19:41.890142" level="INFO">Typing text 'root' into text field 'id=luci_username'.</msg>
+<msg time="2024-02-28T09:45:22.255646" level="INFO">Typing text 'root' into text field 'id=luci_username'.</msg>
 <arg>id=luci_username</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T16:19:41.888286" elapsed="0.256729"/>
+<status status="PASS" start="2024-02-28T09:45:22.254124" elapsed="0.235537"/>
 </kw>
 <arg>${USERNAME}</arg>
-<status status="PASS" start="2024-02-16T16:19:41.885047" elapsed="0.260485"/>
+<status status="PASS" start="2024-02-28T09:45:22.252372" elapsed="0.237697"/>
 </kw>
 <kw name="Click Login Button">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-02-16T16:19:42.149258" level="INFO">Clicking button 'class=cbi-button-positive'.</msg>
+<msg time="2024-02-28T09:45:22.492716" level="INFO">Clicking button 'class=cbi-button-positive'.</msg>
 <arg>class=cbi-button-positive</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T16:19:42.147962" elapsed="0.652955"/>
+<status status="PASS" start="2024-02-28T09:45:22.491900" elapsed="0.600467"/>
 </kw>
-<status status="PASS" start="2024-02-16T16:19:42.146462" elapsed="0.655733"/>
+<status status="PASS" start="2024-02-28T09:45:22.490805" elapsed="0.602256"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-16T16:19:47.806798" level="INFO">Slept 5 seconds.</msg>
+<msg time="2024-02-28T09:45:28.098482" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-16T16:19:42.803623" elapsed="5.003757"/>
+<status status="PASS" start="2024-02-28T09:45:23.096491" elapsed="5.002449"/>
 </kw>
 <kw name="Click Flash Image Button">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-02-16T16:19:47.810550" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Flash image...')]'.</msg>
+<msg time="2024-02-28T09:45:28.101975" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Flash image...')]'.</msg>
 <arg>xpath=//button[contains(text(), 'Flash image...')]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T16:19:47.809645" elapsed="0.110510"/>
+<status status="PASS" start="2024-02-28T09:45:28.101225" elapsed="0.122109"/>
 </kw>
-<status status="PASS" start="2024-02-16T16:19:47.808545" elapsed="0.112001"/>
+<status status="PASS" start="2024-02-28T09:45:28.100089" elapsed="0.123891"/>
 </kw>
 <kw name="Click Browse Button">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-02-16T16:19:47.923829" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Browse…')]'.</msg>
+<msg time="2024-02-28T09:45:28.227530" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Browse…')]'.</msg>
 <arg>xpath=//button[contains(text(), 'Browse…')]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T16:19:47.922892" elapsed="0.129929"/>
+<status status="PASS" start="2024-02-28T09:45:28.226544" elapsed="0.134226"/>
 </kw>
-<status status="PASS" start="2024-02-16T16:19:47.921536" elapsed="0.132061"/>
+<status status="PASS" start="2024-02-28T09:45:28.225213" elapsed="0.136011"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-16T16:19:50.057250" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-02-28T09:45:30.363188" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-16T16:19:48.055336" elapsed="2.002718"/>
+<status status="PASS" start="2024-02-28T09:45:28.362285" elapsed="2.002474"/>
 </kw>
-<status status="PASS" start="2024-02-16T16:19:39.950881" elapsed="10.108745"/>
+<status status="PASS" start="2024-02-28T09:45:20.228781" elapsed="10.146515"/>
 </test>
-<test id="s1-t2" name="Running Python Process" line="21">
+<test id="s1-t2" name="Running Python Process" line="20">
 <kw name="Run Process" owner="Process">
-<msg time="2024-02-16T16:19:50.070701" level="INFO">Starting process:
-python3 /home/lenovo/Desktop/PFE/VS_codes/tests_Robot_Framework/file_upload.py</msg>
-<msg time="2024-02-16T16:19:50.084765" level="INFO">Waiting for process to complete.</msg>
-<msg time="2024-02-16T16:20:11.335903" level="INFO">Process completed.</msg>
+<msg time="2024-02-28T09:45:30.405561" level="INFO">Starting process:
+python3 /home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework/VS_codes/tests_Robot_Framework/file_upload.py</msg>
+<msg time="2024-02-28T09:45:30.432640" level="INFO">Waiting for process to complete.</msg>
+<msg time="2024-02-28T09:45:52.839679" level="INFO">Process completed.</msg>
 <arg>python3</arg>
-<arg>/home/lenovo/Desktop/PFE/VS_codes/tests_Robot_Framework/file_upload.py</arg>
+<arg>/home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework/VS_codes/tests_Robot_Framework/file_upload.py</arg>
 <doc>Runs a process and waits for it to complete.</doc>
-<status status="PASS" start="2024-02-16T16:19:50.064899" elapsed="21.271917"/>
+<status status="PASS" start="2024-02-28T09:45:30.392620" elapsed="22.448285"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-16T16:20:16.340951" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
+<msg time="2024-02-28T09:46:12.845888" level="INFO">Slept 20 seconds.</msg>
+<arg>20s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-16T16:20:11.339113" elapsed="5.002987"/>
+<status status="PASS" start="2024-02-28T09:45:52.843392" elapsed="20.004172"/>
 </kw>
-<status status="PASS" start="2024-02-16T16:19:50.062337" elapsed="26.281728"/>
+<status status="PASS" start="2024-02-28T09:45:30.383653" elapsed="42.467189"/>
 </test>
-<test id="s1-t3" name="Uploading" line="26">
+<test id="s1-t3" name="Uploading" line="25">
 <kw name="Click Upload Button">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-02-16T16:20:16.361150" level="INFO">Clicking element 'css:div.right button.btn.cbi-button-action.important'.</msg>
+<msg time="2024-02-28T09:46:12.879369" level="INFO">Clicking element 'css:div.right button.btn.cbi-button-action.important'.</msg>
 <arg>css:div.right button.btn.cbi-button-action.important</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T16:20:16.355318" elapsed="0.097150"/>
+<status status="PASS" start="2024-02-28T09:46:12.873963" elapsed="0.120605"/>
 </kw>
-<status status="PASS" start="2024-02-16T16:20:16.351764" elapsed="0.101180"/>
+<status status="PASS" start="2024-02-28T09:46:12.866770" elapsed="0.128481"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-16T16:20:26.455824" level="INFO">Slept 10 seconds.</msg>
+<msg time="2024-02-28T09:46:23.000835" level="INFO">Slept 10 seconds.</msg>
 <arg>10s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-16T16:20:16.454239" elapsed="10.002771"/>
+<status status="PASS" start="2024-02-28T09:46:12.999551" elapsed="10.002375"/>
 </kw>
 <kw name="Click Continue Button">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-02-16T16:20:26.464290" level="INFO">Clicking element 'css:div.right button.btn.cbi-button-action.important'.</msg>
+<msg time="2024-02-28T09:46:23.009030" level="INFO">Clicking element 'css:div.right button.btn.cbi-button-action.important'.</msg>
 <arg>css:div.right button.btn.cbi-button-action.important</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-02-16T16:20:26.462317" elapsed="0.140983"/>
+<status status="PASS" start="2024-02-28T09:46:23.006188" elapsed="0.095481"/>
 </kw>
-<status status="PASS" start="2024-02-16T16:20:26.459474" elapsed="0.144400"/>
+<status status="PASS" start="2024-02-28T09:46:23.003912" elapsed="0.098462"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-02-16T16:23:46.610852" level="INFO">Slept 3 minutes 20 seconds.</msg>
+<msg time="2024-02-28T09:49:43.104810" level="INFO">Slept 3 minutes 20 seconds.</msg>
 <arg>200s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-02-16T16:20:26.609256" elapsed="200.002020"/>
+<status status="PASS" start="2024-02-28T09:46:23.103302" elapsed="200.002934"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-02-16T16:23:46.612041" elapsed="0.159436"/>
+<status status="PASS" start="2024-02-28T09:49:43.108710" elapsed="0.147901"/>
 </kw>
-<status status="PASS" start="2024-02-16T16:20:16.349271" elapsed="210.423549"/>
+<status status="PASS" start="2024-02-28T09:46:12.854885" elapsed="210.402536"/>
 </test>
-<status status="PASS" start="2024-02-16T16:19:39.683883" elapsed="247.091507"/>
+<status status="PASS" start="2024-02-28T09:45:19.931993" elapsed="263.326678"/>
 </suite>
 <statistics>
 <total>
