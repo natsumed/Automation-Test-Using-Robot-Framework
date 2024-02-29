@@ -6,7 +6,7 @@ ${LAPTOP_HOST}       192.168.1.100
 ${LAPTOP_USERNAME}   lenovo
 ${LAPTOP_PASSWORD}   root
 ${PROJECT_DIRECTORY}  /home/lenovo/Desktop/PFE/Automation-Test-Using-Robot-Framework
-${COMMIT_MESSAGE}     newmsg2
+${COMMIT_MESSAGE}     newmsg3
 
 *** Test Cases ***
 Pushing in GitHub
